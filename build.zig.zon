@@ -1,0 +1,27 @@
+.{
+    .name = "conway-zig",
+    .version = "0.0.1",
+    .minimum_zig_version = "0.12.0",
+
+    // This field is optional.
+    // Each dependency must either provide a `url` and `hash`, or a `path`.
+    // `zig build --fetch` can be used to fetch all dependencies of a package, recursively.
+    // Once all dependencies are fetched, `zig build` no longer requires
+    // internet connectivity.
+    .dependencies = .{
+        .conway_life_c = .{
+            .url = "https://github.com/sigidagi/conway-life/archive/refs/tags/v0.1.0.tar.gz",
+	        .hash = "1220a3b8211f11af942e7c42c281f25fe06afa687fb12a81eabb050e50459d0e2adc",
+        },
+    },
+
+    // Specifies the set of files and directories that are included in this package.
+    // Only files and directories listed here are included in the `hash` that
+    // is computed for this package.
+    // Paths are relative to the build root. Use the empty string (`""`) to refer to
+    // the build root itself.
+    // A directory listed here means that all files within, recursively, are included.
+    .paths = .{
+        "",
+    },
+}
